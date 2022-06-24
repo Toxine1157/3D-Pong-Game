@@ -21,7 +21,7 @@ public class BallSpawner : MonoBehaviour
 
     public void SpawnBall()
     {
-        int SpawnFrom = Random.Range(3, 4);
+        int SpawnFrom = Random.Range(1, 5);
         SpawnBall(SpawnFrom);
         //ballCtrl.GetComponent<BallController>().BallSpawnWhere = SpawnFrom;
     }
