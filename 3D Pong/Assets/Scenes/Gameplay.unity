@@ -1493,10 +1493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781146cd8a208824fa1fd981a3f87127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Score: 1
-  P2Score: 1
-  P3Score: 1
-  P4Score: 1
+  P1Score: 15
+  P2Score: 15
+  P3Score: 15
+  P4Score: 15
   g1: {fileID: 1257188936}
   g2: {fileID: 1950112793}
   g3: {fileID: 564332244}
