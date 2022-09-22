@@ -118,7 +118,7 @@ public class ScoreManager : MonoBehaviour
             isGameOver();
         }
     }
-
+    
     public void isGameOver()
     {
         // red win
@@ -128,7 +128,7 @@ public class ScoreManager : MonoBehaviour
             P4Score <= 0)
         {
             Wcanvas.GetComponent<Canvas>().enabled = true;
-            Win = "Red Win";
+            Win = "Red is The Winner";
         }
 
         // yellow win
@@ -138,7 +138,7 @@ public class ScoreManager : MonoBehaviour
             P4Score <= 0)
         {
             Wcanvas.GetComponent<Canvas>().enabled = true;
-            Win = "Yellow Win";
+            Win = "Yellow is The Winner";
         }
 
         //green win
@@ -148,7 +148,7 @@ public class ScoreManager : MonoBehaviour
             P4Score <= 0)
         {
             Wcanvas.GetComponent<Canvas>().enabled = true;
-            Win = "Green Win";
+            Win = "Green is The Winner";
         }
 
         // blue win
@@ -158,7 +158,7 @@ public class ScoreManager : MonoBehaviour
             P4Score > 0)
         {
             Wcanvas.GetComponent<Canvas>().enabled = true;
-            Win = "Blue Win";
+            Win = "Blue is The Winner";
         }
     }
     // Start is called before the first frame update

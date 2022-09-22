@@ -6,36 +6,14 @@ public class BallController : MonoBehaviour
 {
     public Vector3 speed;
     private Rigidbody rig;
-    //public int BallSpawnWhere;
-
-    /*public void SpawnFrom(int BallSpawnWhere)
-    {
-        if (BallSpawnWhere == 1)
-        {
-            rig.AddForce(-4, 0, 4, ForceMode.Impulse);
-        }
-
-        if (BallSpawnWhere == 2)
-        {
-            rig.AddForce(-4, 0, -4, ForceMode.Impulse);
-        }
-
-        if (BallSpawnWhere == 3)
-        {
-            rig.AddForce(4, 0, -4, ForceMode.Impulse);
-        }
-
-        if (BallSpawnWhere == 4)
-        {
-            rig.AddForce(4, 0, 4, ForceMode.Impulse);
-        }
-    }*/
+    private AudioSource bounce;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player1")
         {
             rig.AddForce(Random.Range(-100, 101), 0, 0, ForceMode.Acceleration);
+            bounce.Play();
             //rig.velocity *= 1.05f;
             //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
@@ -43,6 +21,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.name == "Player2")
         {
             rig.AddForce(Random.Range(-100, 101), 0, 0, ForceMode.Acceleration);
+            bounce.Play();
             //rig.velocity *= 1.05f;
             //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
@@ -50,6 +29,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.name == "Player3")
         {
             rig.AddForce(0, 0, Random.Range(-100, 101), ForceMode.Acceleration);
+            bounce.Play();
             //rig.velocity *= 1.05f;
             //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
@@ -57,6 +37,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.name == "Player4")
         {
             rig.AddForce(0, 0, Random.Range(-100, 101), ForceMode.Acceleration);
+            bounce.Play();
             //rig.velocity *= 1.05f;
             //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
@@ -64,6 +45,19 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.name == "Ball(Clone)")
         {
             rig.AddForce(Random.Range(-300, 301), 0, Random.Range(-300, 301), ForceMode.Acceleration);
+            bounce.Play();
+        }
+
+        if (collision.gameObject.name == "Spawner1" ||
+            collision.gameObject.name == "Spawner2" ||
+            collision.gameObject.name == "Spawner3" ||
+            collision.gameObject.name == "Spawner4" ||
+            collision.gameObject.name == "Goal1" ||
+            collision.gameObject.name == "Goal2" ||
+            collision.gameObject.name == "Goal3" ||
+            collision.gameObject.name == "Goal4")
+        {
+            bounce.Play();
         }
     }
 
@@ -71,10 +65,7 @@ public class BallController : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody>();
-        //rig.velocity = speed;
-        //SpawnFrom(BallSpawnWhere);
-        //rig.AddForce(4, 0, 4, ForceMode.Impulse);
-        //rig.maxAngularVelocity = 1000;
+        bounce = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
