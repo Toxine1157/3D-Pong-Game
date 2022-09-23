@@ -14,32 +14,24 @@ public class BallController : MonoBehaviour
         {
             rig.AddForce(Random.Range(-100, 101), 0, 0, ForceMode.Acceleration);
             bounce.Play();
-            //rig.velocity *= 1.05f;
-            //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
 
         if (collision.gameObject.name == "Player2")
         {
             rig.AddForce(Random.Range(-100, 101), 0, 0, ForceMode.Acceleration);
             bounce.Play();
-            //rig.velocity *= 1.05f;
-            //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
         
         if (collision.gameObject.name == "Player3")
         {
             rig.AddForce(0, 0, Random.Range(-100, 101), ForceMode.Acceleration);
             bounce.Play();
-            //rig.velocity *= 1.05f;
-            //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
         
         if (collision.gameObject.name == "Player4")
         {
             rig.AddForce(0, 0, Random.Range(-100, 101), ForceMode.Acceleration);
             bounce.Play();
-            //rig.velocity *= 1.05f;
-            //rig.AddTorque(new Vector3(40f, 45f, 80f), ForceMode.Impulse);
         }
 
         if (collision.gameObject.name == "Ball(Clone)")
