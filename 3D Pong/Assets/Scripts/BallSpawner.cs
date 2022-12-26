@@ -13,17 +13,10 @@ public class BallSpawner : MonoBehaviour
     public float spawnInterval;
     private float spawnTimer;
 
-    //public BallController ballCtrl;
-
-    /* use int Random.Range to give tags to spawner location 
-    then return int to be used as parameter in spawner method
-    */
-
     public void SpawnBall()
     {
         int SpawnFrom = Random.Range(1, 5);
         SpawnBall(SpawnFrom);
-        //ballCtrl.GetComponent<BallController>().BallSpawnWhere = SpawnFrom;
     }
 
     public void SpawnBall(int SpawnNumber) // SpawnNumber adalah hasil random.range int
@@ -35,58 +28,37 @@ public class BallSpawner : MonoBehaviour
 
         if (SpawnNumber == 1)
         {
-            //GameObject powerUp = Instantiate(powerUpTemplateList[randomIndex], new Vector3(position.x, position.y, powerUpTemplateList[randomIndex].transform.position.z), Quaternion.identity, spawnArea);
-            //powerUp.SetActive(true);
-
-            //powerUpList.Add(powerUp);//
-
             GameObject ballObject = Instantiate(BallTemplateList[0], new Vector3(6.8f, 1.5f, -6.8f), Quaternion.identity, SpawnArea);
             ballObject.SetActive(true);
-            //ballObject.AddForce()
             BallList.Add(ballObject);
-
-            ballObject.GetComponent<Rigidbody>().AddForce(-4, 0, 4, ForceMode.Impulse);//AddForce(new Vector3(-400, 0, -400));
+            ballObject.GetComponent<Rigidbody>().AddForce(-4, 0, 4, ForceMode.Impulse);
         }
         
         if (SpawnNumber == 2)
         {
             GameObject ballObject = Instantiate(BallTemplateList[0], new Vector3(6.8f, 1.5f, 6.8f), Quaternion.identity, SpawnArea);
             ballObject.SetActive(true);
-            //ballObject.AddForce(-1, 0, -1, ForceMode.Impulse);
-            BallList.Add(ballObject);//
-
-            ballObject.GetComponent<Rigidbody>().AddForce(-4, 0, -4, ForceMode.Impulse);//AddForce(new Vector3(-400, 0, -400));
+            BallList.Add(ballObject);
+            ballObject.GetComponent<Rigidbody>().AddForce(-4, 0, -4, ForceMode.Impulse);
         }
         
         if (SpawnNumber == 3)
         {
             GameObject ballObject = Instantiate(BallTemplateList[0], new Vector3(-6.8f, 1.5f, 6.8f), Quaternion.identity, SpawnArea);
             ballObject.SetActive(true);
-            BallList.Add(ballObject);//
+            BallList.Add(ballObject);
 
-            ballObject.GetComponent<Rigidbody>().AddForce(4, 0, -4, ForceMode.Impulse);//velocity = new Vector3(-4, 0, 4);//AddForce(new Vector3(-400, 0, -400));
+            ballObject.GetComponent<Rigidbody>().AddForce(4, 0, -4, ForceMode.Impulse);
         }
 
         if (SpawnNumber == 4)
         {
             GameObject ballObject = Instantiate(BallTemplateList[0], new Vector3(-6.8f, 1.5f, -6.8f), Quaternion.identity, SpawnArea);
             ballObject.SetActive(true);
-            BallList.Add(ballObject);//
-
-            ballObject.GetComponent<Rigidbody>().AddForce(4, 0, 4, ForceMode.Impulse); //AddForce(new Vector3(-400, 0, -400)); 
+            BallList.Add(ballObject);
+            ballObject.GetComponent<Rigidbody>().AddForce(4, 0, 4, ForceMode.Impulse);
         }
     }
-
-    /*private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.name == "Goal1" ||
-            collision.gameObject.name == "Goal2" ||
-            collision.gameObject.name == "Goal3" ||
-            collision.gameObject.name == "Goal4")
-        {
-            RemoveBall(BallList[0]);//BallList.Remove();
-        }
-    }*/
 
     public void RemoveBall(GameObject ballObject) //GameObject ballObject
     {
@@ -97,10 +69,7 @@ public class BallSpawner : MonoBehaviour
     void Start()
     {
         spawnTimer = 0;
-        //spawnInterval = 0;
-        //
         BallList = new List<GameObject>();
-        //SpawnBall();
     }
 
     // Update is called once per frame

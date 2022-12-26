@@ -34,14 +34,6 @@ public class ScoreManager : MonoBehaviour
             P1.GetComponent<BoxCollider>().enabled = false;
             P1.GetComponent<PaddleControllerHorizontal>().isAlive = false;
 
-            /*if (
-                P2Score <= 0 &&
-                P3Score <= 0 &&
-                P4Score <= 0)
-            {
-                Win = "Red Wins";
-            }*/
-
             isGameOver();
         }
     }
@@ -56,14 +48,6 @@ public class ScoreManager : MonoBehaviour
             P2.GetComponent<MeshRenderer>().enabled = false;
             P2.GetComponent<BoxCollider>().enabled = false;
             P2.GetComponent<PaddleControllerHorizontal>().isAlive = false;
-
-            /*if (P1Score <= 0 &&
-                
-                P3Score <= 0 &&
-                P4Score <= 0)
-            {
-                Win = "Yellow Wins";
-            }*/
 
             isGameOver();
         }
@@ -80,14 +64,6 @@ public class ScoreManager : MonoBehaviour
             P3.GetComponent<BoxCollider>().enabled = false;
             P3.GetComponent<PaddleControllerVertical>().isAlive = false;
 
-            /*if (P1Score <= 0 &&
-                P2Score <= 0 &&
-                
-                P4Score <= 0)
-            {
-                Win = "Green Wins";
-            }*/
-
             isGameOver();
         }
     }
@@ -102,18 +78,6 @@ public class ScoreManager : MonoBehaviour
             P4.GetComponent<MeshRenderer>().enabled = false;
             P4.GetComponent<BoxCollider>().enabled = false;
             P4.GetComponent<PaddleControllerVertical>().isAlive = false;
-            //Wcanvas.GetComponent<Canvas>().enabled = false;
-            //Wcanvas.GetComponent<scriptname>().text = "xxxxxx";
-            //SceneManager.LoadScene("Gameplay");
-
-            /*if (P1Score <= 0 &&
-                P2Score <= 0 &&
-                P3Score <= 0 
-                
-                )
-            {
-                Win = "Blue Wins";
-            }*/
 
             isGameOver();
         }

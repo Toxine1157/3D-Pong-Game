@@ -12,6 +12,7 @@ public class WinnerCanvas : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene("Gameplay");
+        Time.timeScale = 1;
     }
 
     public void ToMainMenu()
